@@ -23,6 +23,107 @@ export const resturantList = [
         "City": "Banglore",
         "Stars": "5",
     },
-    
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    },
+    {
+        "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        "Name": "Burger King",
+        "City": "Banglore",
+        "Stars": "5.0",
+    }
 ]
 

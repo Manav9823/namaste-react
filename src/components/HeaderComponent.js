@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 
 const HeaderComponent = () => {
@@ -11,10 +12,10 @@ const HeaderComponent = () => {
         <div className= "header">
             <img className = "logo" alt = "logo" src= "https://repository-images.githubusercontent.com/199302991/94dcc600-94ff-11eb-9058-6308bc7a425e"></img>
             <ul>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Resturant</li>
-                <li>More</li>
+                <Link to="/about"><li>About</li></Link>
+                <Link to="/contact"><li>Contact</li></Link>
+                <Link to="/resturant"><li>Resturant</li></Link>
+                <Link to="/more"><li>More</li></Link>
             </ul>
             <button onClick={setLoginFunctionality}>{login}</button>
         </div>

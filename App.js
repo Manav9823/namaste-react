@@ -7,6 +7,12 @@ import './style.css'
 import BodyComponenet from './src/components/BodyComponent';
 import HeaderComponent from './src/components/HeaderComponent';
 import FooterComponent from './src/components/FooterComponent';
+import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom'
+import About from './src/components/About';
+import Contact from './src/components/Contact';
+import More from './src/components/More';
+import Error from './src/components/Error';
+import ResturantCard from './src/components/ResturantCardComponent';
 
 const heading1 = React.createElement("h1", {id: "title"}, "Namaste Everyone");
 const heading2 = React.createElement("h2", {id: "title"}, "Namaste Everyone2");
@@ -23,10 +29,42 @@ const FoodApp = () => {
     return (
         <>
             <HeaderComponent/>
-            <BodyComponenet/>
+            <Outlet/>
             <FooterComponent/>
         </>
     )
 }
 
-root.render(<FoodApp/>);
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <FoodApp/>,
+        errorElement:<Error/>,
+        children: [
+            {   
+                path:"/",
+                element: <BodyComponenet/>
+
+            },
+            {   
+                path:"/restaurants/:resId",
+                element:<ResturantCard/>
+
+            },
+            {
+                path: "/about",
+                element: <About/>
+            },
+            {
+                path: "/contact",
+                element: <Contact/>
+            },
+            {
+                path: "/more",
+                element: <More/>
+            }
+        ]
+    }
+])
+
+root.render(<RouterProvider router={router}/>);

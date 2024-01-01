@@ -1,20 +1,40 @@
 import ResturantCard from "./ResturantCardComponent"
-import { resturantList } from "../config"
+import { IMAGE_URL } from "../config"
 import { useEffect, useState } from "react"
 import Shimmer from './Shimmer'
 import './style.css'
 
 
 const BodyComponenet = () => {
+    let resturantList = []
     const [searchText, setsearchText] = useState([])
     const [allResturantList, setAllResturantList] = useState(resturantList)
     const [filteredResturants, setFilteredResturants] = useState([])
 
     useEffect(()=>{
         console.log('In useEffect')
-        console.log(filteredResturants.length)
-        setFilteredResturants(resturantList)
+        getResturantListFromSwiggy()
     }, [])
+
+    async function getResturantListFromSwiggy(){
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const originalData = await data.json()
+        originalData.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((restaurants)=>{
+
+           console.log(restaurants.info.name) 
+           let newObj = {
+            "image": IMAGE_URL + restaurants.info.cloudinaryImageId,
+            "Name": restaurants.info.name,
+            "areaName": restaurants.info.areaName,
+            "Stars": restaurants.info.avgRatingString,
+        }
+           resturantList.push(newObj)
+           const info = restaurants.info
+           console.log(info)
+        })
+        setFilteredResturants(resturantList)
+        // console.log(data.body)
+    }
 
     console.log('Rendered')
 

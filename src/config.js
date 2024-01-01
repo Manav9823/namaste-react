@@ -1,3 +1,6 @@
+export const IMAGE_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
+
+
 export const resturantList = [
     {
         "image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Ftruffles.co.in%2Fgallery.html&psig=AOvVaw0Sx91oqCu0pdIOKGQX1G1N&ust=1703579121553000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPC0kpSVqoMDFQAAAAAdAAAAABAD",

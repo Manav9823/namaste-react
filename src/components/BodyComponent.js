@@ -27,6 +27,7 @@ const BodyComponenet = () => {
             "Name": restaurants.info.name,
             "areaName": restaurants.info.areaName,
             "Stars": restaurants.info.avgRatingString,
+            "id" : restaurants.info.id
         }
            resturantList.push(newObj)
            const info = restaurants.info

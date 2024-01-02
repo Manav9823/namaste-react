@@ -13,6 +13,7 @@ import Contact from './src/components/Contact';
 import More from './src/components/More';
 import Error from './src/components/Error';
 import ResturantCard from './src/components/ResturantCardComponent';
+import RestaurantMenu from './src/components/RestaurantMenu';
 
 const heading1 = React.createElement("h1", {id: "title"}, "Namaste Everyone");
 const heading2 = React.createElement("h2", {id: "title"}, "Namaste Everyone2");
@@ -46,9 +47,13 @@ const router = createBrowserRouter([
                 element: <BodyComponenet/>
 
             },
+            {
+                path: "/home",
+                element:<BodyComponenet/>
+            },
             {   
                 path:"/restaurants/:resId",
-                element:<ResturantCard/>
+                element:<RestaurantMenu/>
 
             },
             {

@@ -14,6 +14,7 @@ import More from './src/components/More';
 import Error from './src/components/Error';
 import ResturantCard from './src/components/ResturantCardComponent';
 import RestaurantMenu from './src/components/RestaurantMenu';
+import Profile from './src/components/Profile'
 
 const heading1 = React.createElement("h1", {id: "title"}, "Namaste Everyone");
 const heading2 = React.createElement("h2", {id: "title"}, "Namaste Everyone2");
@@ -58,7 +59,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About/>
+                element: <About/>,
+                children:[
+                    {
+                        path:"profile",
+                        element: <Profile/>
+                    }
+                ]
             },
             {
                 path: "/contact",

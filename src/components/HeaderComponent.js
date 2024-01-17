@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './style.css'
 import { Link } from 'react-router-dom'
-
+import useOnline from '../customHooks/useOnline'
 
 const HeaderComponent = () => {
     const [login, setLogin] = useState("Login")
@@ -16,7 +16,9 @@ const HeaderComponent = () => {
                 <Link to="/about"><li>About</li></Link>
                 <Link to="/contact"><li>Contact</li></Link>
                 <Link to="/more"><li>More</li></Link>
+                <Link to="/instamart"><li>InstaMart</li></Link>
             </ul>
+            <li>{useOnline() === true ? "🟢" : "🔴" }</li>
             <button onClick={setLoginFunctionality}>{login}</button>
         </div>
     )

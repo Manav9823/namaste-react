@@ -3,13 +3,14 @@ import { IMAGE_URL } from "../config"
 import { useEffect, useState } from "react"
 import Shimmer from './Shimmer'
 import './style.css'
-
+import useOnline from '../customHooks/useOnline'
 
 const BodyComponenet = () => {
     let resturantList = []
     const [searchText, setsearchText] = useState([])
     const [allResturantList, setAllResturantList] = useState(resturantList)
-    const [filteredResturants, setFilteredResturants] = useState([])
+    const [filteredResturants, setFilteredResturant] = useState([])
+
 
     useEffect(()=>{
         console.log('In useEffect')
@@ -22,7 +23,8 @@ const BodyComponenet = () => {
         const originalData = await data.json()
         console.log("hii before")
         console.log(originalData.data.cards)
-        originalData.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((restaurants)=>{
+        console.lo
+        originalData.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((restaurants)=>{
         console.log('hii')
            console.log(restaurants.info.name) 
            let newObj = {
@@ -36,7 +38,7 @@ const BodyComponenet = () => {
            const info = restaurants.info
            console.log(info)
         })
-        setFilteredResturants(resturantList)
+        setFilteredResturant(resturantList)
         // console.log(data.body)
     }
 
@@ -46,6 +48,10 @@ const BodyComponenet = () => {
         if(searchText == "") return newResturantList
         console.log(newResturantList)
         return newResturantList.filter((resturant) => resturant.Name.toLowerCase().includes(searchText.toLowerCase()))
+    }
+
+    if(!useOnline()){
+        return <h1>Sorry, Please Check your internet Connection </h1>
     }
     return filteredResturants.length === 0 ? <Shimmer/> :(
         <>
@@ -62,7 +68,7 @@ const BodyComponenet = () => {
             <button onClick={()=>{
                 const data = searchTextFromList(searchText, allResturantList)
                 console.log(data)
-                setFilteredResturants(data)
+                setFilteredResturant(data)
             }}>Search</button>
         </div>
         <div className = "body">

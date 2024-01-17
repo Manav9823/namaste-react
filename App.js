@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import './style.css'
 import BodyComponenet from './src/components/BodyComponent';
@@ -15,6 +15,10 @@ import Error from './src/components/Error';
 import ResturantCard from './src/components/ResturantCardComponent';
 import RestaurantMenu from './src/components/RestaurantMenu';
 import Profile from './src/components/Profile'
+import Shimmer from './src/components/Shimmer';
+const InstaMart = lazy(()=> import ('./src/components/Instamart'))
+
+
 
 const heading1 = React.createElement("h1", {id: "title"}, "Namaste Everyone");
 const heading2 = React.createElement("h2", {id: "title"}, "Namaste Everyone2");
@@ -56,6 +60,12 @@ const router = createBrowserRouter([
                 path:"/restaurants/:resId",
                 element:<RestaurantMenu/>
 
+            },
+            {
+                path:"/instamart",
+                element:(
+                    <Suspense fallback=<Shimmer/>><InstaMart/></Suspense>
+                )
             },
             {
                 path: "/about",

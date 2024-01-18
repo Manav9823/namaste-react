@@ -2,7 +2,7 @@ import ResturantCard from "./ResturantCardComponent"
 import { IMAGE_URL } from "../config"
 import { useEffect, useState } from "react"
 import Shimmer from './Shimmer'
-import './style.css'
+// import './style.css'
 import useOnline from '../customHooks/useOnline'
 
 const BodyComponenet = () => {
@@ -18,31 +18,30 @@ const BodyComponenet = () => {
     }, [])
 
     async function getResturantListFromSwiggy(){
-        console.log('hii from manaav')
+        // console.log('hii from manaav')
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const originalData = await data.json()
-        console.log("hii before")
-        console.log(originalData.data.cards)
-        console.lo
-        originalData.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((restaurants)=>{
-        console.log('hii')
-           console.log(restaurants.info.name) 
-           let newObj = {
-            "image": IMAGE_URL + restaurants.info.cloudinaryImageId,
-            "Name": restaurants.info.name,
-            "areaName": restaurants.info.areaName,
-            "Stars": restaurants.info.avgRatingString,
-            "id" : restaurants.info.id
-        }
+        // console.log("hii before")
+        // console.log(originalData.data.cards)
+        originalData.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((restaurants)=>{
+            // console.log('hii')
+            // console.log(restaurants.info.name) 
+            let newObj = {
+                "image": IMAGE_URL + restaurants.info.cloudinaryImageId,
+                "Name": restaurants.info.name,
+                "areaName": restaurants.info.areaName,
+                "Stars": restaurants.info.avgRatingString,
+                "id" : restaurants.info.id
+            }
            resturantList.push(newObj)
            const info = restaurants.info
-           console.log(info)
+        //    console.log(info)
         })
         setFilteredResturant(resturantList)
         // console.log(data.body)
     }
 
-    console.log('Rendered')
+    // console.log('Rendered')
 
     const searchTextFromList = (searchText, newResturantList) => {
         if(searchText == "") return newResturantList
@@ -55,23 +54,23 @@ const BodyComponenet = () => {
     }
     return filteredResturants.length === 0 ? <Shimmer/> :(
         <>
-        <div className="search-Container">
+        <div class= "flex h-12 mt-2 mb-4 justify-center">
             <input
                  type="text"
-                 className="search-input"
+                 class="w-52 border-2 border-black pl-4"
                  placeholder="search"
                  value= {searchText}
                  onChange={(e)=>{
                     setsearchText(e.target.value)
                  }}
             />
-            <button onClick={()=>{
+            <button class= "w-9 border-2 border-black bg-slate-300" onClick={()=>{
                 const data = searchTextFromList(searchText, allResturantList)
-                console.log(data)
+                // console.log(data)
                 setFilteredResturant(data)
-            }}>Search</button>
+            }}>🚀</button>
         </div>
-        <div className = "body">
+        <div className = "grid grid-cols-5 gap-2 gap-y-6 ">
             {
                 filteredResturants.length === 0 ? ( <h1>No resturants by this name</h1>) :
                 filteredResturants.map((resturant, index) => {

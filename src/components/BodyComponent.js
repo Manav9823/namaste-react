@@ -1,16 +1,22 @@
 import ResturantCard from "./ResturantCardComponent"
 import { IMAGE_URL } from "../config"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Shimmer from './Shimmer'
 // import './style.css'
 import useOnline from '../customHooks/useOnline'
+import UserContext from "../utils/UserContext"
 
 const BodyComponenet = () => {
     let resturantList = []
     const [searchText, setsearchText] = useState([])
     const [allResturantList, setAllResturantList] = useState(resturantList)
     const [filteredResturants, setFilteredResturant] = useState([])
-
+    const {loggedInAs, setUserName} = useContext(UserContext)
+    console.log(loggedInAs)
+    console.log(setUserName)
+    const setLoggedInAs = (value) => {
+        setUserName(value)
+    }
 
     useEffect(()=>{
         console.log('In useEffect')
@@ -69,8 +75,18 @@ const BodyComponenet = () => {
                 // console.log(data)
                 setFilteredResturant(data)
             }}>🚀</button>
+            <label class="font-bold mt-3 mr-2 ml-8">Login As:</label>
+            <input
+                 type="text"
+                 class="w-52 border-2 border-black pl-4"
+                 placeholder="search"
+                 value= {loggedInAs}
+                 onChange={(e)=>{
+                    setLoggedInAs(e.target.value)
+                 }}
+            />
         </div>
-        <div className = "grid grid-cols-5 gap-2 gap-y-6 ">
+        <div className = "ml-3 mr-3 grid grid-cols-5 gap-5 gap-y-6 ">
             {
                 filteredResturants.length === 0 ? ( <h1>No resturants by this name</h1>) :
                 filteredResturants.map((resturant, index) => {

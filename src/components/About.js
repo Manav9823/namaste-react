@@ -33,9 +33,9 @@ class About extends Component{
         console.log('Parent-rendered')
         return(
             <>
-            <h1>Hii my name is manav</h1>
+            {/* <h1 class="font-bold">Hii my name is manav</h1> */}
             <Profile name={"manav"} age={23}/>
-            <Profile name={"bansal"} age={24}/>
+            {/* <Profile name={"bansal"} age={24}/> */}
             </>
         )
     }

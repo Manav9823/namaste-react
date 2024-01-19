@@ -1,13 +1,15 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 // import './style.css'
 import { Link } from 'react-router-dom'
 import useOnline from '../customHooks/useOnline'
+import UserContext from '../utils/UserContext'
 
 const HeaderComponent = () => {
     const [login, setLogin] = useState("Login")
     const setLoginFunctionality = () => {
         login === "Login" ? setLogin("Logout") : setLogin("Login")
     }
+    const {loggedInAs} = useContext(UserContext)
     return (
         <div class="h-20 flex justify-between bg-slate-400 ">
             <div class="w-48">
@@ -21,9 +23,10 @@ const HeaderComponent = () => {
                 <Link to="/instamart"><li>InstaMart</li></Link>
             </ul>
             
-            <div class="w-24 flex items-center justify-between">
-            <div>{useOnline() === true ? "🟢" : "🔴" }</div>
-            <button onClick={setLoginFunctionality}>{login}</button>
+            <div class="w-28 flex items-center justify-between">
+            <div class="w-2/12">{useOnline() === true ? "🟢" : "🔴" }</div>
+            {/* <button onClick={setLoginFunctionality}>{login}</button> */}
+            <h4 class="w-9/12">{loggedInAs}</h4>
             </div>
            
         </div>

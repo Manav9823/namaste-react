@@ -7,12 +7,12 @@ const ResturantCard = ({image, Name, areaName, Stars, id}) => {
     const {resId}  = useParams()
     // console.log(resId)
     return(
-        <div class="border-2 border-slate-400 ">
-            <img className = "logo" alt = "logo" src = {image}></img>
+        <div class="bg-slate-200 rounded-xl">
+            <img class="rounded-xl" className = "logo" alt = "logo" src = {image}></img>
             <Link to={"/restaurants/" + id}   >
-                <h1>{Name}</h1>
-                <h4 class="font-extralight">{areaName}</h4>
-                <h4>{Stars}</h4>
+                <h1 class="font-bold ml-2">{Name}</h1>
+                <h4 class=" ml-2 font-extralight">{areaName}</h4>
+                <h4 class="ml-2">{Stars}</h4>
             </Link>
         </div>
     )

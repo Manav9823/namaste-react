@@ -17,7 +17,9 @@ import Profile from './src/components/Profile'
 import Shimmer from './src/components/Shimmer';
 const InstaMart = lazy(()=> import ('./src/components/Instamart'))
 import UserContext from './src/utils/UserContext';
-
+import { Provider } from 'react-redux';
+import AppStore from './src/utils/AppStore';
+import Cart from './src/components/Cart';
 
 // const heading1 = React.createElement("h1", {id: "title"}, "Namaste Everyone");
 // const heading2 = React.createElement("h2", {id: "title"}, "Namaste Everyone2");
@@ -33,6 +35,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const FoodApp = () => {
     const [userName, setUserName] = useState();
+    const [searchBar, setBar] = useState();
     useEffect(() => {
         //Some API call to authenticate
         let data = {
@@ -43,11 +46,13 @@ const FoodApp = () => {
     }, [])
     return (
         <>
-        <UserContext.Provider value= {{loggedInAs: userName, setUserName}}>
+        <Provider store={AppStore}>
+        <UserContext.Provider value= {{loggedInAs: userName, setUserName, showSearchBar:searchBar, setBar}}>
             <HeaderComponent/>
             <Outlet/>
             <FooterComponent/>
         </UserContext.Provider>
+        </Provider>
         </>
     )
 }
@@ -95,6 +100,10 @@ const router = createBrowserRouter([
             {
                 path: "/more",
                 element: <More/>
+            },
+            {
+                path: "/cart",
+                element: <Cart/>
             }
         ]
     }

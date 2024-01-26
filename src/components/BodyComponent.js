@@ -12,6 +12,7 @@ const BodyComponenet = () => {
     const [allResturantList, setAllResturantList] = useState(resturantList)
     const [filteredResturants, setFilteredResturant] = useState([])
     const {loggedInAs, setUserName} = useContext(UserContext)
+    const {showSearchBar} = useContext(UserContext)
     console.log(loggedInAs)
     console.log(setUserName)
     const setLoggedInAs = (value) => {
@@ -60,22 +61,23 @@ const BodyComponenet = () => {
     }
     return filteredResturants.length === 0 ? <Shimmer/> :(
         <>
-        <div class= "flex h-12 mt-2 mb-4 justify-center">
+        {showSearchBar ? 
+        <div class= "flex h-12 mt-2 mb-4 ">
             <input
                  type="text"
-                 class="w-52 border-2 border-black pl-4"
-                 placeholder="search"
+                 class=" w-6/12 ml-96 border-2 border-gray-500 pl-4 border-r-0"
+                 placeholder="Search for your favourite resturants"
                  value= {searchText}
                  onChange={(e)=>{
                     setsearchText(e.target.value)
                  }}
             />
-            <button class= "w-9 border-2 border-black bg-slate-300" onClick={()=>{
+            <button class= "w-8 border-2 border-gray-500 border-l-0 " onClick={()=>{
                 const data = searchTextFromList(searchText, allResturantList)
                 // console.log(data)
                 setFilteredResturant(data)
             }}>🚀</button>
-            <label class="font-bold mt-3 mr-2 ml-8">Login As:</label>
+            {/* <label class="font-bold mt-3 mr-2 ml-8">Login As:</label>
             <input
                  type="text"
                  class="w-52 border-2 border-black pl-4"
@@ -84,9 +86,10 @@ const BodyComponenet = () => {
                  onChange={(e)=>{
                     setLoggedInAs(e.target.value)
                  }}
-            />
+            /> */}
         </div>
-        <div className = "ml-3 mr-3 grid grid-cols-5 gap-5 gap-y-6 ">
+        : ''}
+        <div className = "ml-3 mr-3 mt-4 grid grid-cols-5 gap-5 gap-y-6 ">
             {
                 filteredResturants.length === 0 ? ( <h1>No resturants by this name</h1>) :
                 filteredResturants.map((resturant, index) => {

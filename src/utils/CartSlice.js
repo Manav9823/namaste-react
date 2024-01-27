@@ -14,6 +14,7 @@ const CartSlice = createSlice({
             state.item.pop()
         },
         emptyCart: (state) =>{
+            console.log('In empty cart')
             state.item.length = 0
         }
     }

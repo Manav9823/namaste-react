@@ -34,10 +34,11 @@ const RestaurantMenu = () => {
     return restaurantList.length === 0 ? <Shimmer/> : (
             <div class="text-center mt-5 mb-5">
                 <h2 class="text-bold text-2xl mb-4">{restaurantList.Name}</h2>
-                {/* {for(const item of itemCategories)} */}
-                <Accordian itemCategories={itemCategories[0].card.card}/>
-                <Accordian itemCategories={itemCategories[1].card.card}/>
-                <Accordian itemCategories={itemCategories[2].card.card}/>
+                {/* {for(const item of itemCategories)} */
+                 console.log('itemCategories', itemCategories)}
+                <Accordian itemCategories={itemCategories[0]?.card?.card}/>
+                <Accordian itemCategories={itemCategories[1]?.card?.card}/>
+                <Accordian itemCategories={itemCategories[2]?.card?.card}/>
                 {itemCategories.map((c)=>{
                     {console.log('hii')}
                     {<Accordian/>}

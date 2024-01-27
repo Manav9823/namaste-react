@@ -20,6 +20,7 @@ import UserContext from './src/utils/UserContext';
 import { Provider } from 'react-redux';
 import AppStore from './src/utils/AppStore';
 import Cart from './src/components/Cart';
+import Foods from './src/components/Foods';
 
 // const heading1 = React.createElement("h1", {id: "title"}, "Namaste Everyone");
 // const heading2 = React.createElement("h2", {id: "title"}, "Namaste Everyone2");
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart/>
+            },
+            {
+                path:"/food/:foodType",
+                element: <Foods/>
             }
         ]
     }

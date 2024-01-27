@@ -28,10 +28,10 @@ const HeaderComponent = () => {
             </div>
             <div class ="w-6/12 flex justify-between px-20 ml-20">
                 <ul class="flex flex-1  items-center justify-between w-8/12">
-                    <Link to="/home"><li class ="font-bold text-lg  text-gray-400">🏠 Home</li></Link>
+                    <Link to="/home"><li class ="font-bold text-lg  text-gray-400">Home</li></Link>
                     {/* <Link to="/about"><li class ="font-bold text-lg  text-gray-400">About</li></Link>
                     <Link to="/contact"><li class ="font-bold text-lg  text-gray-400">Contact</li></Link> */}
-                    <div class="font-bold text-lg text-gray-400 cursor-pointer" onClick={handleOnClick}>🔍 Search</div>
+                    <div class="font-bold text-lg text-gray-400 cursor-pointer" onClick={handleOnClick}>Search</div>
                     <Link to="/more"><li class ="font-bold text-lg  text-gray-400">More</li></Link>
                     <Link to="/instamart"><li class ="font-bold text-lg  text-gray-400">InstaMart</li></Link>
                     <Link to="/cart">

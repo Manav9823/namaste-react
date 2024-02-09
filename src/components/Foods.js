@@ -4,7 +4,7 @@ import Shimmer from './Shimmer'
 import ResturantCard from "./ResturantCardComponent"
 import { IMAGE_URL } from "../config"
 
-export default Foods = () => {
+const Foods = () => {
     console.log('In food component')
     const {foodType} = useParams()
     const [resturants, setResturants] = useState([])
@@ -53,3 +53,5 @@ export default Foods = () => {
     )
 }
 
+
+export default Foods
